@@ -12,7 +12,7 @@ if argc == 0:
 elif argc == 1:
     argStr += ':'
 else:
-    argStr = 's:'
+    argStr += 's:'
 print(argStr.format(argc))
 
 i = 0

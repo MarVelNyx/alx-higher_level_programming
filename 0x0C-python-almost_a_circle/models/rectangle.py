@@ -51,6 +51,17 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
+    def __str__(self):
+        """
+        str method for class Rectangle
+        
+        Return:
+            string: [class_name] (id) x/y - width/height
+        """
+        string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                self.id, self.x, self.y, self.width, self.height)
+        return string
+
     @property
     def width(self):
         """

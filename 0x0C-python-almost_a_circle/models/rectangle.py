@@ -42,7 +42,7 @@ class Rectangle(Base):
         """
         Prints the # char Rectangle
         """
-        for i in rang(self.y):
+        for i in range(self.y):
             print()
         for i in range(self.height):
             for j in range(self.x):

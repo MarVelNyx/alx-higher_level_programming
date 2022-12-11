@@ -34,6 +34,35 @@ class Square(Rectangle):
                                                self.size)
         return string
 
+    def update(self, *args, **kwargs):
+        """
+        Updates square class
+
+        Attributes:
+            args (list): inputted argments to update square class
+            kwargs (dict): inputted arguments to update square class
+        """
+        if args is not None and len(args) != 0:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+        elif kwargs is not None and len(kwargs) != 0:
+            for (key, value) in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
     @property
     def size(self):
         """

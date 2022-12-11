@@ -83,6 +83,18 @@ class Rectangle(Base):
                     self.x = arg
                 elif i == 4:
                     self.y = arg
+        elif kwargs is not None and len(kwargs) != 0:
+            for (key, value) in kwargs.items():
+                if key == "iid":
+                    self.ide = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     @property
     def width(self):

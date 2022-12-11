@@ -85,8 +85,8 @@ class Rectangle(Base):
                     self.y = arg
         elif kwargs is not None and len(kwargs) != 0:
             for (key, value) in kwargs.items():
-                if key == "iid":
-                    self.ide = value
+                if key == "id":
+                    self.id = value
                 elif key == "width":
                     self.width = value
                 elif key == "height":
@@ -95,6 +95,16 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """
+        Creates a dictionary representation of rectangle attributes
+
+        Return:
+            A dictionary represtation
+        """
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
 
     @property
     def width(self):

@@ -95,3 +95,22 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+
+        Return:
+            list of instances
+        """
+        file_name = cls.__name__ + ".json"
+        json_obj = []
+        try:
+            with open(file_name, 'r', encoding='utf-8') as file:
+                json_obj = cls.from_json_string(file.read())
+            for key, value in enumerated(json_obj):
+                json_obj[key] = cls.create(**json_obj[key])
+        except Exception as error:
+            pass
+        return json_obj

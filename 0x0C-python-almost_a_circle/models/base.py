@@ -109,7 +109,7 @@ class Base:
         try:
             with open(file_name, 'r', encoding='utf-8') as file:
                 json_obj = cls.from_json_string(file.read())
-            for key, value in enumerated(json_obj):
+            for key, value in enumerate(json_obj):
                 json_obj[key] = cls.create(**json_obj[key])
         except Exception as error:
             pass
